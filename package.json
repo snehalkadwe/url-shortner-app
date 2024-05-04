@@ -1,0 +1,23 @@
+{
+	"name": "url-shortner-app",
+	"version": "1.0.0",
+	"description": "this is url shortner application",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "url-shortner-app"
+	},
+	"author": "snehal",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.10",
+		"express": "^4.19.2",
+		"mongoose": "^8.3.3",
+		"nanoid": "^5.0.7",
+		"nodemon": "^3.1.0",
+		"shortid": "^2.2.16"
+	}
+}

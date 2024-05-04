@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>URL Shortner</h1>
+		<br />
+		<!-- locals: will contains the data coming from our backend -->
+		<% if (locals.id) { %>
+		<p>
+			Generated URL:
+			<a href="http://localhost:8000/url/<%=id%>"
+				>http://localhost:8000/url/<%=id%></a
+			>
+		</p>
+		<% } %>
+		<form
+			action="/url"
+			method="post">
+			<input
+				type="text"
+				placeholder="http://www.example.com"
+				name="url" />
+			<button type="submit">Generate Short URL</button>
+		</form>
+		<br />
+		<% if (locals.urls) {%>
+		<table>
+			<thead>
+				<th>Sr. No</th>
+				<th>ShortId</th>
+				<th>Redirect</th>
+				<th>Total No of Visits</th>
+			</thead>
+
+			<tbody>
+				<% urls.forEach((url, index) => { %>
+				<tr>
+					<td><%= index + 1 %></td>
+					<td><%= url.shortId %></td>
+					<td><%= url.redirectURL %></td>
+					<td><%= url.totalVisits %></td>
+					<% }) %>
+				</tr>
+			</tbody>
+		</table>
+		<% } %>
+	</body>
+</html>
